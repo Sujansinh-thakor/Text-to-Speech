@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(105, 105, 179);
+        }
+        button.btn{
+            margin-top:15%;
+            margin-left: 30%;
+            margin-right: 30%;
+            margin-left: 30%;
+            padding:10px;
+            color: white;
+            font-size: 100px;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(193,225,120,1) 0%, rgba(48,210,47,1) 70%);
+            border-radius: 60px;
+            border: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        button.btn:hover{
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(48,210,47,1) 0%, rgba(193,225,120,1) 70%);
+            transition: 0.7s;
+        }
+        @media(max-width:768px){
+            button.btn{
+                margin-top:200px;
+                padding-left: 30px;
+                padding-right: 30px;
+                font-size: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">Click here!!</button>
+    <script>
+        let btnn=document.querySelector('.btn');
+        btnn.addEventListener('click',Speak);
+        function Speak(e){
+            let text="Hello There, My name is Sujansinh Thakor";
+            let speech=new SpeechSynthesisUtterance(text);
+            let voice=window.speechSynthesis.getVoices();
+
+            speech.volume=1;
+            speech.rate=0.9;
+            speech.pitch=1;
+
+            window.speechSynthesis.speak(speech);
+        }
+    
+        
+    </script>
+</body>
+</html>
